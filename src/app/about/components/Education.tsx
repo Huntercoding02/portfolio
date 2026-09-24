@@ -1,19 +1,5 @@
- type UniversityProps = {
-    university: string;
-    bootcamp: string;
-    major: string;
-        };
+type UniversityProps = { university: string; bootcamp: string; major: string };
 
-export default function Education({university,bootcamp,major}:UniversityProps) {
-        return(
-           <section>
-        <h2>Education</h2>
-        <p>
-          I graduated from {university} 
-          with a major in {major}.
-          and I also finished the bootcamp from {bootcamp}
-        </p>
-      </section>
-           
-        )
-    }
+export default function Education({ university, bootcamp, major }: UniversityProps) {
+  return <section className="rounded-3xl border border-[#e7eaf1] bg-white p-7 shadow-sm"><p className="text-2xl">🎓</p><h2 className="mt-4 text-xl font-bold">Education</h2><p className="mt-3 leading-7 text-[#5f6b85]">Marketing graduate from {university}, with additional software development training from {bootcamp}.</p><span className="mt-5 inline-block rounded-full bg-[#f0efff] px-3 py-1 text-sm font-bold text-[#5048e5]">{major}</span></section>;
+}

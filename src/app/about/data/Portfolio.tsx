@@ -14,7 +14,10 @@ export type Project = {
     name : string,
     description : string,
     technologies : string[],
-    id: number;
+    id: number,
+    image : string,
+    url : string,
+    githubUrl: string,
 }
 type portfolioprop = {
     name : string,
@@ -50,15 +53,21 @@ const portfolio : portfolioprop = {
   projects: [
     {
         id : 0,
-      name: "Hotel Management System",
-      description: "...",
-      technologies: ["Node.js", "React", "PostgreSQL"],
+      name: "Neatly Hotel Management",
+      description: "A full-stack hotel booking and management platform with authentication, room search and filtering, file uploads, Stripe payments, and an admin dashboard for rooms and bookings.",
+      technologies: ["React", "Node.js", "Tailwind CSS", "Supabase", "PostgreSQL", "Stripe"],
+      image: "/projects/forever.png",
+      url: "",
+      githubUrl: "https://github.com/popimi/neatly-hotel-management-system",
     },
     {
         id : 1,
       name: "E-Commerce",
-      description: "...",
-      technologies: ["Next.js", "Node.js", "MySQL"],
+      description: "A full-stack e-commerce application with product browsing, filtering, sorting, product variants, cart and order flows, Stripe payments, plus an admin area for products and orders.",
+      technologies: ["React", "Node.js", "Express.js", "MongoDB", "Stripe"],
+      image: "/projects/forever.png",
+      url: "https://forever-frontend-rho.vercel.app/",
+      githubUrl: "https://github.com/Huntercoding02/e-commerce",
     },
   ],
 

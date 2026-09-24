@@ -4,22 +4,7 @@ import Projects from "./components/Projects";
 import Experience from "./components/Experience";
 import TechStack from "./components/TechStack";
 import portfolio from "./data/Portfolio";
-import Link from "next/link";
+
 export default function AboutPage() {
-  
-  return (
-    <main>
-      <h1>About Me</h1>
-
-      <Introduction name={portfolio.name} nickName={portfolio.nickName} />
-
-      <Education university={portfolio.education.university} major={portfolio.education.major} bootcamp={portfolio.education.bootcamp} />
-
-      <Projects projects = {portfolio.projects}/>
-      <Experience experience={portfolio.experience} />
-      <TechStack techStack={portfolio.techStack} />
-      <Link href = "/">Back Home</Link>
-      {/* <p>I graduated from Assumption University in major Marketing after I had some experienced on marketing online , sales and guest service excutive.I really interested in coding.Learning programming by myself and found bootscamp named Tech Up that really helped me to understand coding and algorithm. When I finished bootcampt I got opportunity from win win interactive co,td to work as Full-stack devloper 1.5 years. My tech stack PHP codeignter jQuery javascripts and use mysQl as database</p> */}
-    </main>
-  );
+  return <main className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-20"><div className="max-w-3xl"><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#635bff]">About me</p><h1 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-6xl">A marketer turned developer.</h1><p className="mt-5 text-lg leading-8 text-[#5f6b85]">I bring a customer-focused perspective to building web products that are clear, useful, and reliable.</p></div><section className="mt-10 overflow-hidden rounded-3xl bg-[#172033] p-7 text-white shadow-lg shadow-[#172033]/10 sm:p-10"><div className="flex flex-col justify-between gap-8 sm:flex-row sm:items-end sm:gap-12"><div className="max-w-2xl"><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#b9eee7]">Resume</p><h2 className="mt-3 text-3xl font-black tracking-[-0.04em]">Full Stack Developer</h2><p className="mt-4 leading-7 text-white/70">1.5 years of production experience with PHP, MySQL, JavaScript, AJAX, and jQuery, plus personal full-stack projects using React, Node.js, Express, MongoDB, PostgreSQL, Supabase, and Stripe.</p></div><a href="/resume-siwagron-kamonratanasuk.pdf" target="_blank" rel="noreferrer" className="mt-1 shrink-0 self-start rounded-full bg-[#b9eee7] px-5 py-3 text-sm font-bold text-[#172033] transition hover:bg-white sm:mb-1 sm:ml-6 sm:self-end">View resume ↗</a></div><div className="mt-9 border-t border-white/15 pt-7"><p className="mb-3 text-xs font-bold uppercase tracking-[0.18em] text-white/45">Key skills</p><div className="flex flex-wrap gap-2">{["PHP & MySQL", "React & Node.js", "REST APIs", "Database design", "Git & Postman"].map((skill) => <span key={skill} className="rounded-full border border-white/15 px-3 py-1.5 text-sm font-semibold text-white/80">{skill}</span>)}</div></div></section><div className="mt-12 grid gap-5 lg:grid-cols-2"><Introduction name={portfolio.name} nickName={portfolio.nickName} /><Education university={portfolio.education.university} major={portfolio.education.major} bootcamp={portfolio.education.bootcamp} /><Experience experience={portfolio.experience} /><TechStack techStack={portfolio.techStack} /></div><Projects projects={portfolio.projects} /></main>;
 }

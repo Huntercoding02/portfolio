@@ -1,14 +1,3 @@
-import Link from "next/link"
-export default function ContactPage(){
-    return(
-        <div>
-               <h1>contact me</h1>
-        <p>hunvicter@gmail.com</p>
-      
-        <Link href="/">
-  Back Home
-</Link>
-        </div>
-     
-    )
+export default function ContactPage() {
+  return <main className="flex flex-1 items-center px-5 py-14 sm:px-8"><section className="mx-auto w-full max-w-3xl rounded-[2rem] bg-[#172033] p-8 text-white shadow-2xl shadow-[#172033]/15 sm:p-14"><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#b9eee7]">Contact</p><h1 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-6xl">Let&apos;s build something useful.</h1><p className="mt-6 max-w-xl text-lg leading-8 text-white/70">Have a project, opportunity, or question? I&apos;d be happy to hear from you.</p><a className="mt-10 inline-block rounded-full bg-[#b9eee7] px-6 py-3 font-bold text-[#172033] transition hover:bg-white" href="mailto:hunvicter@gmail.com">hunvicter@gmail.com</a></section></main>;
 }

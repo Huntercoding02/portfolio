@@ -1,14 +1,7 @@
 import Link from "next/link";
-export default function ProjectPage() {
-  return (
-    <main>
-      <h1>Projects</h1>
-      <p>my projects</p><br/>
-        <Link href="https://forever-frontend-rho.vercel.app/">project1</Link><br/>
-      <Link href="/projects/1">project2</Link><br/>
-    <Link href="/">
-  Back Home
-</Link>
-    </main>
-  );
+import portfolio from "@/app/about/data/Portfolio";
+import { endtext } from "@/app/about/Utils/endtext";
+
+export default function ProjectsPage() {
+  return <main className="mx-auto w-full max-w-6xl px-5 py-14 sm:px-8 sm:py-20"><div className="max-w-2xl"><p className="text-sm font-bold uppercase tracking-[0.2em] text-[#635bff]">Projects</p><h1 className="mt-4 text-4xl font-black tracking-[-0.045em] sm:text-6xl">A few things I&apos;ve made.</h1><p className="mt-5 text-lg leading-8 text-[#5f6b85]">A collection of web projects where I practiced building complete, useful experiences.</p></div><section className="mt-12 grid gap-6 md:grid-cols-2">{portfolio.projects.map((project, index) => <article key={project.id} className="group overflow-hidden rounded-3xl border border-[#e7eaf1] bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-[#172033]/10"><div className={`flex h-52 items-end p-7 ${index % 2 === 0 ? "bg-[#dcd9ff]" : "bg-[#b9eee7]"}`}><span className="text-6xl">{index % 2 === 0 ? "✦" : "↗"}</span></div><div className="p-7"><p className="text-sm font-bold text-[#635bff]">{endtext(project.technologies)}</p><h2 className="mt-2 text-2xl font-bold">{project.name}</h2><p className="mt-3 leading-7 text-[#5f6b85]">{project.description}</p><div className="mt-6 flex flex-wrap gap-3"><Link href={`/projects/${project.id}`} className="rounded-full bg-[#172033] px-4 py-2 text-sm font-bold text-white transition hover:bg-[#635bff]">Read case study</Link><a href={project.githubUrl} target="_blank" rel="noreferrer" className="rounded-full border border-[#d6dbe8] px-4 py-2 text-sm font-bold text-[#172033] transition hover:border-[#635bff] hover:text-[#635bff]">GitHub ↗</a>{project.url && <a href={project.url} target="_blank" rel="noreferrer" className="rounded-full border border-[#d6dbe8] px-4 py-2 text-sm font-bold text-[#172033] transition hover:border-[#635bff] hover:text-[#635bff]">Live site ↗</a>}</div></div></article>)}</section></main>;
 }
